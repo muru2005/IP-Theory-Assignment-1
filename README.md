@@ -9,13 +9,14 @@
 
 ### Setup Steps
 1.  **Database Setup**:
-    -   Create a database named `complaint_system` (or update `DBUtil.java` with your DB name).
-    -   Run the `db.sql` script (or create tables manually as per the documentation).
+    -   Create a database named `ip_labs` (or run the provided `db.sql` script).
+    -   Run the `db.sql` script to create tables and default admin user.
+    -   **Default Admin Credentials**: Username: `admin`, Password: `pass123`
 2.  **Deployment**:
     -   Copy the `ComplaintSystem` folder to your Tomcat `webapps` directory.
     -   Ensure `mysql-connector-j-8.3.0.jar` is in `WEB-INF/lib`.
 3.  **Configuration**:
-    -   Open `src/com/complaint/DBUtil.java` and verify your MySQL username and password.
+    -   Open `src/com/complaint/DBUtil.java` if you need to change database credentials (default: root/mysql).
 4.  **Running**:
     -   Start Tomcat (`bin/startup.bat`).
     -   Access the application at: `http://localhost:8080/ComplaintSystem/`.
@@ -36,10 +37,13 @@
 -   `src/com/complaint/AdminLoginServlet.java`: Authenticates admin users.
 -   `src/com/complaint/AdminDashboardServlet.java`: Displays all complaints for admin.
 -   `src/com/complaint/UpdateComplaintServlet.java`: Updates complaint status and remarks.
+-   `src/com/complaint/AdminLogoutServlet.java`: Handles admin logout by invalidating the session.
 -   `src/com/complaint/DBUtil.java`: Database connection utility.
 
-#### Configuration
+#### Configuration & Scripts
 -   `WEB-INF/web.xml`: Deployment descriptor mapping URLs to Servlets.
+-   `compile.bat`: Batch script to compile Java source files.
+-   `db.sql`: SQL script to create database schema and default admin user.
 
 ### Project Structure
 ```
@@ -62,5 +66,8 @@ ComplaintSystem/
 ├── register.html
 ├── track.html
 ├── admin_login.html
+├── compile.bat
+├── db.sql
 └── README.md
 ```
+
