@@ -1,0 +1,23 @@
+<html>
+ <head>
+   <script src="js/validation.js"></script>
+ </head>
+ <body>
+   <form  name="complaintForm" action="registerComplaint" method="post" onsubmit="return validateForm()">
+     <label>Enter your name</label><br>
+     <input type="text" name="name">
+     <br> <br>
+     <label>Enter your email</label><br>
+     <input type="text"  name="email">
+      <br> <br>
+     <label>Enter the category of complaint</label><br>
+     <input type="text" name="category">
+      <br> <br>
+     <label>Enter the description of the complaint</label><br>
+     <textarea name="description"></textarea>
+      <br> <br>
+     <button type="submit">Submit</button>
+   </form>
+ 
+</body>
+</html>
